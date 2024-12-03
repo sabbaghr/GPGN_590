@@ -1,6 +1,7 @@
 # Introduction
+This Githyb repository host the code and details of low cost infrasound wave sensor. Infrasound waves, is a type sound wave with frquencies that are below the human audabel threshold, these waves have frequencies below 20Hz and can travel long distances. This types of waves have natural sources, such as: volcanix eruptiosn and earthiquakes. sone animals like elephants  and whales use ifnrasound waves to communicate over long distaces. Some artificila soruces for infrasound waves are nuclear and quemical explosions as weell as some machines like diesel engines and wind turbanies. Woofers and subwoofers can produce low-frequency sound, including near infrasound. For this experiment we use an speaker with a woofer to create low frequency sounds. Our sensor is able to detect this the pressure filed created by this low frequency  waves. 
 
-![IMG_5917](https://github.com/user-attachments/assets/3c981f12-bf8d-4440-8b98-da94ed9b90be)
+This type of sensor has been used before 
 
 # Design 
 1. 9V Battery power 
