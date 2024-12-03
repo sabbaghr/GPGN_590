@@ -17,6 +17,12 @@ This project represents our first attempt to develop a low-cost infrasound senso
 7. 3D printed case and ports 
 
 
+
+
+![circuits 001](https://github.com/user-attachments/assets/4f1112a3-0d4d-4847-9a9c-a6900fcfa5ad)
+
+![circuits 002](https://github.com/user-attachments/assets/8de210bf-c137-4f88-be97-989ec461876f)
+
 # Implementation 
 Wired things together 
 
