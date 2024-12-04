@@ -19,13 +19,28 @@ Parts:
 7. 3D printed case and ports 
 
 
-## Circuit desing: 
+### Circuit desing: 
+Our sensor system is divided into two main components. The first component includes the GPS module and the BMP390 barometric pressure sensor. The second component of the sensor is the Differential pressure sensor. 
 
-### BMP 390 and GRS: 
-Our sensors is separated in two parts. The first part consits of the GPS and BMP390 barometric pressure sensor. The data from this part of the sensor is transfered using the Xbee communications system, the figure below shows the circuit design and how the barometric pressure sensor and the GPS are connected to the Arduino UNO. Since, the sensors are going to be deployed in the field we add a 9V batteery to power the arduinos and the sensors. The battery is connected to the soldering board, from the soldering the board we connect the BMP390 Baromentric pressure sensor and the Arduino UNO. The BMP390 is conected to the 6,7,8, and 9 pins of the Arudino. For the GPS module, we have that the power is coming form the arduino, and then from the GPS TX goes to the pin 4 RX to pin 3, SDA and SCL goes to pin A4 and A5. 
+#### BMP 390 and GRS: 
+The first component of the sensor includes the BMP390 barometric pressure sensor and the GPS module. Data from these components is transmitted using the XBee communication system. The diagram below illustrates the circuit design, showing how these components are connected to the Arduino UNO.
+
+For field deployment, a 9V battery powers the Arduino and the sensors. The battery is connected to a soldering board, which supplies power to both the BMP390 sensor and the Arduino UNO. The BMP390 sensor connects to pins 6, 7, 8, and 9 on the Arduino UNO.
+
+For the GPS module:
+
+Power is supplied by the Arduino.
+The GPS TX pin connects to Arduino pin 4, and the GPS RX pin connects to Arduino pin 3.
+SDA and SCL lines are connected to Arduino pins A4 and A5, respectively.
 
 ![circuits 001](https://github.com/user-attachments/assets/4f1112a3-0d4d-4847-9a9c-a6900fcfa5ad)
 
+
+#### SDP810-125 Differential Pressure Sensor
+
+The second component of the sensor system is the differential pressure sensor. In this configuration, a 9V battery powers a second soldering board, which supplies power to the Arduino Nano and the differential pressure sensor.
+
+Data recorded by the differential pressure sensor is stored on an SD card. To ensure proper communication between the differential pressure sensor and the Arduino Nano, 10K ohm resistors are added to the connections. The SD card reader is also connected to the Arduino Nano to store the recorded data from the sensor.
 
 ![circuits 002](https://github.com/user-attachments/assets/8de210bf-c137-4f88-be97-989ec461876f)
 
