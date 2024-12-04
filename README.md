@@ -19,7 +19,7 @@ Parts:
 7. 3D printed case and ports 
 
 
-#Circuit desing: 
+## Circuit desing: 
 
 ### BMP 390 and GRS: 
 Our sensors is separated in two parts. The first part consits of the GPS and BMP390 barometric pressure sensor. The data from this part of the sensor is transfered using the Xbee communications system, the figure below shows the circuit design and how the barometric pressure sensor and the GPS are connected to the Arduino UNO. Since, the sensors are going to be deployed in the field we add a 9V batteery to power the arduinos and the sensors. The battery is connected to the soldering board, from the soldering the board we connect the BMP390 Baromentric pressure sensor and the Arduino UNO. The BMP390 is conected to the 6,7,8, and 9 pins of the Arudino. For the GPS module, we have that the power is coming form the arduino, and then from the GPS TX goes to the pin 4 RX to pin 3, SDA and SCL goes to pin A4 and A5. 
