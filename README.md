@@ -1,20 +1,22 @@
 # Introduction
-This GitHub repository contains the code and details for a low-cost infrasound wave sensor. Infrasound waves are a type of acoustic (pressure) wave with frequencies below the human audible threshold—typically under 20 Hz. These waves can travel long distances and originate from both natural and artificial sources. Natural sources include volcanic eruptions, earthquakes, and even some animals, such as elephants and whales, which use infrasound to communicate over vast distances. Artificial sources include nuclear and chemical explosions, as well as machinery like diesel engines and wind turbines. Devices like woofers and subwoofers can also produce low-frequency sound, including near-infrasound frequencies.
+This GitHub repository documents the design of a low-cost infrasound sensor. We provide a description of the circuit design along with the relevant .ino code for data acquisition and storage. 
 
-In this experiment, we used a speaker equipped with a woofer to generate low-frequency sounds. Our sensor successfully detected the pressure field created by these waves, demonstrating its functionality as an infrasound sensor. Practical usage of this sensor is discussed in the Applications section of this document.
+Infrasound waves are a type of acoustic (pressure) wave with frequencies below the human audible threshold-— typically under 20 Hz. These waves can travel long distances and originate from both natural and artificial sources. Natural sources include volcanic eruptions, earthquakes, and even some animals, such as elephants and whales, which use infrasound to communicate over vast distances. Artificial sources include nuclear and chemical explosions, as well as machinery like diesel engines and wind turbines. Acoustic devices (woofers and subwoofers) can also produce low-frequency sound, potentially including near-infrasound. Such controlled sources are useful for testing the sensitivity of infrasound sensors and signal-noise separation in post-processing. 
+
+In this experiment, we used a woofer to generate low-frequency sounds that are recorded by the infrasound sensor. Our sensor successfully detected the pressure field created by several different sources, demonstrating its functionality as an infrasound sensor. Practical usage of this sensor is discussed in the Applications section of this document.
 
 # Design 
 Parts: 
-1. 9V Battery power 
-2. SDP810-125 differential pressure 
-3. BMP390 barometric pressure sensor 
-4. XBee RF communication shield 
-5. SD card writer/SD card 
-6. BN-080 GPS module 
-7. 3D printed case and ports 
-8. Arduino UNO 
-9. Arduino Nano
-
+1. [Standard 9V battery](https://www.amazon.com/PKCELL-Maximum-Long-Lasting-Leak-Proof-Detectors/dp/B00ZTS55Y4/ref=zg_bs_g_389576011_d_sccl_4/133-1758009-7153552?psc=1)
+2. [SDP810-125 differential pressure sensor](https://www.digikey.com/en/products/detail/sensirion-ag/SDP810-125PA/6605488)
+3. [BMP390 barometric pressure sensor](https://www.adafruit.com/product/4816)
+4. [XBee RF communication shield](https://www.tinyosshop.com/Xbee%20Shield)
+5. [SD card writer](https://www.digikey.com/en/products/detail/adafruit-industries-llc/254/5761230?gclsrc=aw.ds&&utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=Pmax_Shopping_DK%2B%20Supplier_ITECH&utm_term=&utm_content=&utm_id=go_cmp-21147141757_adg-_ad-__dev-c_ext-_prd-5761230_sig-Cj0KCQiAu8W6BhC-ARIsACEQoDDO7fIDbgui0jB24heOPZQb_AjEaTjcEO5iy__woYfIqouTcPxJ1OsaAuejEALw_wcB&gad_source=1&gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDDO7fIDbgui0jB24heOPZQb_AjEaTjcEO5iy__woYfIqouTcPxJ1OsaAuejEALw_wcB&gclsrc=aw.ds)
+6. [SD card](https://www.amazon.com/SanDisk-3-Pack-Ultra-Memory-3x32GB/dp/B08GY9575R/ref=sr_1_3?crid=1SOA0HEH90LZ5&dib=eyJ2IjoiMSJ9.hQqTZGlZd9V2GIrXprQC5JC6IXKaE6h6nwBd7TCHT-XGCipTIBl3iaMbFFl6avG5aZiAp_pmK2QUqku2RxFShHqdRTCFh3Hx1LKa6YvmcwuXIm3XLu7t5do5F8pC6bFwvu0tqlNCkEQFp3xbSA8kQlux9nHHgxIZuqM7dYQV5u8hki33DO0ODvmRBQ5flP9zVQr8HxfOCCWMw0Goa4PduhBMO5WV55EcW0XanZqfGfo.7_flmoYglnLs9RA4CDwW3aTVpN7HWKLhQH7jVxFNcDA&dib_tag=se&keywords=32+GB+sd+card&qid=1733416760&sprefix=32+gb+sd+card%2Caps%2C147&sr=8-3)
+7. [BN-280 GPS module](https://store.beitian.com/products/beitian-gps-module-with-antenna-ubx-m10050-gnss-chip-ultra-low-power-gnss-receiver-for-track-be-280?variant=44373885616415&srsltid=AfmBOooMkOwoqqiY4GBIr7OxF1UAmp9Qw3sXnslK-Ptm95SI2oD-UdiK)
+8. [Arduino Nano](https://www.digikey.com/en/products/detail/arduino/A000005/2638989?gclsrc=aw.ds&&utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_Low%20ROAS%20Categories&utm_term=&utm_content=&utm_id=go_cmp-20243063506_adg-_ad-__dev-c_ext-_prd-2638989_sig-Cj0KCQiAu8W6BhC-ARIsACEQoDBTD2_9hd4dZnQ7dMdN0KglQeLHIxiTRR5XjcEkNcvqNSMsdOB7FM0aArCiEALw_wcB&gad_source=1&gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDBTD2_9hd4dZnQ7dMdN0KglQeLHIxiTRR5XjcEkNcvqNSMsdOB7FM0aArCiEALw_wcB&gclsrc=aw.ds)
+9. [Arduino UNO](https://www.digikey.com/en/products/detail/arduino/A000066/2784006?gclsrc=aw.ds&&utm_adgroup=&utm_source=google&utm_medium=cpc&utm_campaign=PMax%20Shopping_Product_Low%20ROAS%20Categories&utm_term=&utm_content=&utm_id=go_cmp-20243063506_adg-_ad-__dev-c_ext-_prd-2784006_sig-Cj0KCQiAu8W6BhC-ARIsACEQoDB-5zRvcEcZCzNVXZGHN11ImdkSehHEJr5OruJRdEUuLezWGa85VUMaAq3JEALw_wcB&gad_source=1&gclid=Cj0KCQiAu8W6BhC-ARIsACEQoDB-5zRvcEcZCzNVXZGHN11ImdkSehHEJr5OruJRdEUuLezWGa85VUMaAq3JEALw_wcB&gclsrc=aw.ds) 
+10. [3D printed case and ports](https://formlabs.com/3d-printers/form-3/?srsltid=AfmBOopFRAd2Nutp5a-4NDmB9jMAnkUhlHDc3qHuftNpa3CwsTDpFNEM) 
 
 ### Circuit design and Implementation: 
 Our sensor system is divided into two subsystems that are controlled by independent Arduino controller boards, while sharing a common power source. This was done because both the GPS module and differential pressure sensor required an I2C connection. Although these devices have independent I2C addresses and could theoretically be connected to the same Arduino, the specific pressure sensor we used requires pull-up resistors that interfere with the GPS module. 
