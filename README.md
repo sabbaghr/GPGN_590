@@ -32,7 +32,7 @@ The GPS module is connected to the Arduino UNO for power and ground. The GPS TX 
 
 ![circuits 001](https://github.com/user-attachments/assets/4f1112a3-0d4d-4847-9a9c-a6900fcfa5ad)
 
-![Screenshot 2024-10-29 at 5 04 23 PM](https://github.com/user-attachments/assets/2bd99502-9510-4403-82cf-5af35e65398b)
+
 
 #### SDP810-125 Differential Pressure Sensor
 The second circuit of the sensor system is the differential pressure sensor and SD writer. In this configuration, the same 9V battery provides a common power hookup to a second soldering board, which subsequently reroutes power to the Arduino Nano, the differential pressure sensor, and the SD card device.
