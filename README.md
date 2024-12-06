@@ -6,7 +6,7 @@ Infrasound waves are a type of acoustic (pressure) wave with frequencies below t
 In this experiment, we used a woofer to generate low-frequency sounds that are recorded by the infrasound sensor. Our sensor successfully detected the pressure field created by several different sources, demonstrating its functionality as an infrasound sensor. Practical usage of this sensor is discussed in the Applications section of this document.
 
 # Design 
-The core components of our design include: 
+The core components of our design are listed and linked below. Implementation of each component is discussed in further detail in Circuit Design and Implementation. 
 1. [standard 9V battery](https://www.amazon.com/PKCELL-Maximum-Long-Lasting-Leak-Proof-Detectors/dp/B00ZTS55Y4/ref=zg_bs_g_389576011_d_sccl_4/133-1758009-7153552?psc=1)
 2. [Sensirion SDP810-125 differential pressure sensor](https://www.digikey.com/en/products/detail/sensirion-ag/SDP810-125PA/6605488)
 3. [Adafruit BMP390 barometric pressure sensor](https://www.adafruit.com/product/4816)
